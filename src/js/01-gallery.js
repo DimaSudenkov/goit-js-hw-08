@@ -8,6 +8,8 @@ const container = document.querySelector(".gallery");
 
 container.insertAdjacentHTML('afterbegin', createMarkup(galleryItems));
 
+container.style.listStyle = 'none'
+
 function createMarkup(arr) {
 
   return arr.map(({ preview, original, description }) =>
