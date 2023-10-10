@@ -18,6 +18,9 @@ form.addEventListener('submit', handlerSubmit);
 function handlerSubmit(evt) {
   evt.preventDefault()
   const { email, message } = evt.currentTarget.elements;
+  if (email.value === '' || message.value === '') {
+    return alert('Please fill in all the fields!');
+  }
   console.log({ email: email.value, message: message.value });
   localStorage.removeItem(keyEmailMessage);
   evt.currentTarget.reset();
